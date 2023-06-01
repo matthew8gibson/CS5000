@@ -35,48 +35,21 @@ public class IncomeTax {
         // keep all numbers as int, then divide by 100 (to make the % work)
 
         // processing section
-        { // Idea #1 - trying to use ternary
-          // issue: we need to do more than just set a single value taxAmount, but we also
-          // need to set Tax Rate.
-          // but maybe that is ok, just repeat the if statement twice.
-          // less than 30k
-            /*
-             * taxAmount = (annualIncome <= INCOMEBOUNDARY0)
-             * ? (annualIncome / 100 * RATE0)
-             * : (INCOMEBOUNDARY0 / 100 * RATE0);
-             * // bracket after 30k
-             * taxAmount += ((annualIncome > INCOMEBOUNDARY0) && (annualIncome <=
-             * INCOMEBOUNDARY1))
-             * ? ((annualIncome - INCOMEBOUNDARY0) / 100 * RATE1)
-             * : ((INCOMEBOUNDARY1 - INCOMEBOUNDARY0) / 100 * RATE1);
-             */
-        }
-
-        { // idea #2 switch statement.
-            /*
-             * switch (annualIncome) {
-             * case v:
-             * 
-             * break;
-             * 
-             * default:
-             * break;
-             * }
-             */
-        }
-
         { // idea #3 nested if statements
             if (annualIncome <= INCOMEBOUNDARY0) { // in the 0 range (under 30k)
-                taxAmount = (annualIncome / 100 * RATE0);
+                taxAmount = (annualIncome / 100 * RATE0); // Actual complete tax amount.
                 taxBracket = RATE0;
             } else {
-                taxAmount = (INCOMEBOUNDARY0 / 100 * RATE0);
+                taxAmount = (INCOMEBOUNDARY0 / 100 * RATE0); // tax amount - first block only - 900
                 if ((annualIncome > INCOMEBOUNDARY0) && (annualIncome <= INCOMEBOUNDARY1)) { // in the 1 range (between
                                                                                              // 30 and 70)
-                    taxAmount += ((annualIncome - INCOMEBOUNDARY0) / 100 * RATE1);
+                    taxAmount += ((annualIncome - INCOMEBOUNDARY0) / 100 * RATE1); // first block (900 from before) +
+                                                                                   // partial second block.
                     taxBracket = RATE1;
                 } else {
-                    taxAmount += (annualIncome / 100 * RATE1); // START HERE!
+                    taxAmount += ((INCOMEBOUNDARY1 - INCOMEBOUNDARY0) / 100 * RATE1); // tax amount - adding second
+                                                                                      // block
+                    // to the first
                     if ((annualIncome > INCOMEBOUNDARY1) && (annualIncome <= INCOMEBOUNDARY2)) { // in the 2 range
                                                                                                  // (between 70 and 150)
                         taxAmount += ((annualIncome - INCOMEBOUNDARY1) / 100 * RATE2);
@@ -90,6 +63,7 @@ public class IncomeTax {
         }
 
         // output section
+        System.out.println();
         System.out.println("Your income:\t" + annualIncome);
         System.out.println("Your tax bracket:" + taxBracket);
         System.out.println("Your tax amount:" + taxAmount);
