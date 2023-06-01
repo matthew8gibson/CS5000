@@ -40,13 +40,16 @@ public class IncomeTax {
           // need to set Tax Rate.
           // but maybe that is ok, just repeat the if statement twice.
           // less than 30k
-            taxAmount = (annualIncome <= INCOMEBOUNDARY0)
-                    ? (annualIncome / 100 * RATE0)
-                    : (INCOMEBOUNDARY0 / 100 * RATE0);
-            // bracket after 30k
-            taxAmount += ((annualIncome > INCOMEBOUNDARY0) && (annualIncome <= INCOMEBOUNDARY1))
-                    ? ((annualIncome - INCOMEBOUNDARY0) / 100 * RATE1)
-                    : ((INCOMEBOUNDARY1 - INCOMEBOUNDARY0) / 100 * RATE1);
+            /*
+             * taxAmount = (annualIncome <= INCOMEBOUNDARY0)
+             * ? (annualIncome / 100 * RATE0)
+             * : (INCOMEBOUNDARY0 / 100 * RATE0);
+             * // bracket after 30k
+             * taxAmount += ((annualIncome > INCOMEBOUNDARY0) && (annualIncome <=
+             * INCOMEBOUNDARY1))
+             * ? ((annualIncome - INCOMEBOUNDARY0) / 100 * RATE1)
+             * : ((INCOMEBOUNDARY1 - INCOMEBOUNDARY0) / 100 * RATE1);
+             */
         }
 
         { // idea #2 switch statement.
@@ -63,17 +66,19 @@ public class IncomeTax {
         }
 
         { // idea #3 nested if statements
-            if (annualIncome <= INCOMEBOUNDARY0) { // in the 0 range
+            if (annualIncome <= INCOMEBOUNDARY0) { // in the 0 range (under 30k)
                 taxAmount = (annualIncome / 100 * RATE0);
                 taxBracket = RATE0;
             } else {
                 taxAmount = (INCOMEBOUNDARY0 / 100 * RATE0);
-                if ((annualIncome > INCOMEBOUNDARY0) && (annualIncome <= INCOMEBOUNDARY1)) { // in the 1 range
+                if ((annualIncome > INCOMEBOUNDARY0) && (annualIncome <= INCOMEBOUNDARY1)) { // in the 1 range (between
+                                                                                             // 30 and 70)
                     taxAmount += ((annualIncome - INCOMEBOUNDARY0) / 100 * RATE1);
                     taxBracket = RATE1;
                 } else {
-                    taxAmount += (annualIncome / 100 * RATE1);
-                    if ((annualIncome > INCOMEBOUNDARY1) && (annualIncome <= INCOMEBOUNDARY2)) { // in the 1 range
+                    taxAmount += (annualIncome / 100 * RATE1); // START HERE!
+                    if ((annualIncome > INCOMEBOUNDARY1) && (annualIncome <= INCOMEBOUNDARY2)) { // in the 2 range
+                                                                                                 // (between 70 and 150)
                         taxAmount += ((annualIncome - INCOMEBOUNDARY1) / 100 * RATE2);
                         taxBracket = RATE2;
                     } else {
