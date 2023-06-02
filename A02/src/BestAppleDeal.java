@@ -20,12 +20,17 @@ public class BestAppleDeal {
       s.close(); // prompted in VS Code to close to free up resources
     } else {
       inputValue = Integer.parseInt(args[0]);
+      String judgement;
     }
-    // processing section
+    // processing section - calculate the bigger deal.
 
     // output section
     System.out.println();
-    System.out.println("Input Value:\t" + inputValue);
+    System.out.println("Small box weight:\t" + inputValue + "Pounds");
+    System.out.println("Small box price:\t" + inputValue + "Dollars");
+    System.out.println("Large box weight:\t" + inputValue + "Pounds");
+    System.out.println("Large box price:\t" + inputValue + "Dollars");
+    System.out.println("Judgement: the" + " box is a better deal");
 
     // cleanup section, any resources to close?
   }
