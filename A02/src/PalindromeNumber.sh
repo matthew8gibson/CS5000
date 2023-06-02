@@ -14,5 +14,5 @@ echo more tests
 /usr/bin/env /Library/Java/JavaVirtualMachines/temurin-20.jdk/Contents/Home/bin/java --enable-preview  -cp /Users/matgib/repos/CS5000/A02/bin PalindromeNumber 41804
 /usr/bin/env /Library/Java/JavaVirtualMachines/temurin-20.jdk/Contents/Home/bin/java --enable-preview  -cp /Users/matgib/repos/CS5000/A02/bin PalindromeNumber 23238
 /usr/bin/env /Library/Java/JavaVirtualMachines/temurin-20.jdk/Contents/Home/bin/java --enable-preview  -cp /Users/matgib/repos/CS5000/A02/bin PalindromeNumber 00000
-
+/usr/bin/env /Library/Java/JavaVirtualMachines/temurin-20.jdk/Contents/Home/bin/java --enable-preview  -cp /Users/matgib/repos/CS5000/A02/bin PalindromeNumber 03423
 
