@@ -38,4 +38,3 @@ Large box weight: 10 Pounds
 Large box prices: 28 Dollars 
 Judgment: The smaller box is a better deal
 
-##
