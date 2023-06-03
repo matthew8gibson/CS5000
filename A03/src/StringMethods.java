@@ -17,9 +17,9 @@ public class StringMethods {
       Scanner s = new Scanner(System.in);
       System.out.println();
       System.out.print("Enter String 1:");
-      string_1 = s.nextLine();
+      string_1 = s.nextLine().trim();
       System.out.print("Enter String 2:");
-      string_2 = s.nextLine();
+      string_2 = s.nextLine().trim();
       s.close(); // prompted in VS Code to close to free up resources
     } else {
       string_1 = args[0];
@@ -45,7 +45,15 @@ public class StringMethods {
     outputF = string_2.toLowerCase();
     // g) Valid substring:
     // my version... grab first 2 characters of the string if Length > 2
-    outputG = (string_1.length() > 2 ? string_1.substring(0, 2) : "string length less than 2");
+    if (string_1.length() > 2) {
+      // returning all but the first and last chracter
+      outputG = string_1.substring(1, (string_1.length() - 1));
+    } else {
+      // only returning 1st character.
+      outputG = string_1.substring(0, 1);
+    }
+    // outputG = (string_1.length() > 2 ? string_1.substring(0, 2) : "string length
+    // less than 2");
 
     // output section
     System.out.println("");
