@@ -38,6 +38,10 @@ public class BestAppleDeal {
     float smallBoxValue = (float) smallBoxWeight / (float) smallBoxPrice;
     float largeBoxValue = (float) largeBoxWeight / (float) largeBoxPrice;
 
+    System.out.println();
+    System.out.println(
+        "Test - Debugging- small: " + smallBoxValue + " large: " + largeBoxValue + " Big Number is a better deal");
+
     if (smallBoxValue > largeBoxValue) {
       judgement = "The smaller box is a better deal";
     } else if (smallBoxValue < largeBoxValue) {
@@ -52,7 +56,7 @@ public class BestAppleDeal {
     System.out.println("Small box price:\t" + smallBoxPrice + " Dollars");
     System.out.println("Large box weight:\t" + largeBoxWeight + " Pounds");
     System.out.println("Large box price:\t" + largeBoxPrice + " Dollars");
-    System.out.println("Judgement: " + judgement);
+    System.out.println("Judgement:\t\t" + judgement);
 
     // cleanup section, any resources to close?
   }
