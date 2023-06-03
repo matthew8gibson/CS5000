@@ -1,4 +1,4 @@
-
+clear
 echo the given test solution
 /usr/bin/env /Library/Java/JavaVirtualMachines/temurin-20.jdk/Contents/Home/bin/java --enable-preview  -cp /Users/matgib/repos/CS5000/A02/bin PalindromeNumber 122
 /usr/bin/env /Library/Java/JavaVirtualMachines/temurin-20.jdk/Contents/Home/bin/java --enable-preview  -cp /Users/matgib/repos/CS5000/A02/bin PalindromeNumber 14127

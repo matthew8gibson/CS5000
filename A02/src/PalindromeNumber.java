@@ -31,9 +31,10 @@ public class PalindromeNumber {
     // Task 1 - confirm the input is 5 characters
     /// what if the first character is 0?
 
+    // 3 methods are below for getting length. Only 1 is used.
     int inputActualLength = 0;
     // method 1 for getting length
-    inputActualLength = String.valueOf(inputValue).length();
+    // inputActualLength = String.valueOf(inputValue).length();
     // System.out.println("Input Value Length:\t\t" + inputActualLength);
 
     // method 2 for getting length
@@ -46,7 +47,7 @@ public class PalindromeNumber {
     // System.out.println("Input Value Length:\t\t" + inputActualLength);
 
     // method 3 for getting length
-    inputActualLength = (int) (Math.log10(inputValue) + 1);
+    // inputActualLength = (int) (Math.log10(inputValue) + 1);
     // System.out.println("Input Value Length:\t\t" + inputActualLength);
 
     // dropping out if the length is not right.
@@ -54,7 +55,9 @@ public class PalindromeNumber {
       judgement = "Invalid input, must be 5 digits number.";
     } else {
       // given a 5 char int, test for palindrome
-      if ((inputValue / 10000 == inputValue % 10) && (inputValue / 1000 == inputValue % 100)) {
+      // first half of && is checking the first and last digits are the same.
+      // second half of && is checking the second and third digits are the same.
+      if ((inputValue / 10000 == inputValue % 10) && ((inputValue / 1000) % 10 == (inputValue % 100) / 10)) {
         judgement = "Palindrome";
       } else {
         judgement = "Not Palindrome";
