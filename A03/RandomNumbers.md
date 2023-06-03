@@ -33,11 +33,4 @@ Thanks!
 Matthew
 
 test code
-    boolean test = false;
-    while (!test) {
-      requirement1 = 20 + (int) (Math.random() * 61);
-      System.out.println("a) A random integer between 20 and 80 (inclusive):\t" + requirement1);
-      if (requirement1 == 20) {
-        test = true;
-      }
-    }
+
