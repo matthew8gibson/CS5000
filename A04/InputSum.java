@@ -7,7 +7,7 @@
 
 import java.util.Scanner;
 
-public class BestAppleDeal {
+public class InputSum {
   public static void main(String[] args) {
     // setup/input section
     // wrapper to optionally skip prompt, if cmdline parameter is entered.
