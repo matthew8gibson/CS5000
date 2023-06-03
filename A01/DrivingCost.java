@@ -26,10 +26,10 @@ public class DrivingCost
       
       // calculations section
       double cost = distance / efficiency * price; // miles / mpg * cost of gas.
-
+   
       // output section
       System.out.println(""); 
-      System.out.println("The distance (miles):\t\t\t" + distance);
+      System.out.println("The distance (miles):\t\t\t\t" + distance);
       System.out.println("Fuel efficiency (mpg):\t\t\t" + efficiency); 
       System.out.println("Price per gallon (dollars):\t$" + price);
       System.out.println("The trip cost (dollars):\t\t$" + cost); 

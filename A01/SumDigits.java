@@ -25,11 +25,12 @@ public class SumDigits
       {
          output = output + (working % 10); // takes the last digit and adds it
          working = working / 10 ;// removes the last digit (truncated b/c of int datatype)         
-         System.out.println("Debugging - Processing working: " + working + ". Processing output: " + output );        
+         //System.out.println("Debugging - Processing working: " + working + ". Processing output: " + output );        
       }
+      
       // output section
       System.out.println(); 
-      System.out.println("The input number is:\t\t" + input); 
+      System.out.println("The input number is:\t" + input); 
       System.out.println("The sum of digits is:\t" + output); 
       System.out.println(); 
       
