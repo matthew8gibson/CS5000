@@ -20,15 +20,16 @@ public class RandomNumbers {
     // c) A random integer number between -50 and -20 (inclusive).
     requirement3 = -50 + (int) (Math.random() * 31);
     // d) A random floating-point number between 0.0 and 21.9999 (inclusive).
-    requirement4 = (float) ((Math.random() * 21.999f));
-    // TODO: broken? 21.99 won't ever be hit
+    requirement4 = (float) ((Math.random() * 21.999f)); // BUG: 21.99 will not get hit!
 
-    boolean showDetails = true;
+    // debugging section, disable by setting to false
+    boolean showDetails = false;
     if (showDetails) {
-      if (requirement1 == 20 || requirement1 == 80 ||
-          requirement2 == -20 || requirement2 == 20 ||
-          requirement3 == -50 || requirement3 == -20 ||
-          requirement4 == 0.0f || requirement4 == 21.999f) {
+      // if (requirement2 == -20 || requirement2 == 20){
+      // if (requirement3 == -50 || requirement3 == -20){
+      if (requirement4 == 0.0f || requirement4 == 21.999f) {
+        // if (requirement1 == 20 || requirement1 == 80) {
+
         System.out.println();
         System.out.println("testing**************" + requirement1 + " "
             + requirement2 + " " + requirement3 + " " + requirement4);
@@ -37,12 +38,11 @@ public class RandomNumbers {
     }
 
     // output section
-    // System.out.println();
+    System.out.println();
     System.out.println("a) A random integer between 20 and 80 (inclusive):\t" + requirement1);
     System.out.println("b) A random integer number between -20 and 20 (inclusive):\t" + requirement2);
     System.out.println("c) A random integer number between -50 and -20 (inclusive):\t" + requirement3);
     System.out.println("d) A random floating-point number between 0.0 and 21.9999 (inclusive);\t" + requirement4);
-
     // cleanup section, any resources to close?
   }
 }
