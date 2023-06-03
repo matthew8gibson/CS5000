@@ -21,6 +21,7 @@ public class RandomNumbers {
     requirement3 = -50 + (int) (Math.random() * 31);
     // d) A random floating-point number between 0.0 and 21.9999 (inclusive).
     requirement4 = (float) ((Math.random() * 21.999f)); // BUG: 21.99 will not get hit!
+    // IDEA: can we using casting of double to float to get it to be inclusive?
 
     // debugging section, disable by setting to false
     boolean showDetails = false;
