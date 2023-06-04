@@ -14,7 +14,7 @@ public class RandomNumbers {
 
     // processing section
     // a) A random integer number between 20 and 80 (inclusive).
-    requirement1 = 33333;
+    requirement1 = 20 + (int) (Math.random() * 61);
     // b) A random integer number between -20 and 20 (inclusive).
     requirement2 = -20 + (int) (Math.random() * 41);
     // c) A random integer number between -50 and -20 (inclusive).
@@ -25,27 +25,23 @@ public class RandomNumbers {
     requirement4 = Float.parseFloat(strReq4); // moving back to the format needed
 
     // debugging section, disable by setting to false
-    boolean showDetails = true;
+    boolean showDetails = false;
     if (showDetails) {
       int count = 0;
       while (showDetails) {
         ++count;
         // BEGIN TEST SECTION
-        requirement1 = 20 + (int) (Math.random() * 61);
+
         // END TEST SECTION
 
-        // comment and uncomment these lines to test.
+        // comment and uncomment these lines to test for edge case values
         // if (requirement2 == -20 || requirement2 == 20) {
         // if (requirement3 == -50 || requirement3 == -20) {
         // if (requirement4 == 0.0f || requirement4 == 21.999f) {
         // if (requirement4 == 21.9999f) {
         if (requirement1 == 20 || requirement1 == 80) {
-
           System.out.println();
-          System.out.println("testing**************" + requirement1 + " "
-              + requirement2 + " " + requirement3 + " " + requirement4);
-          System.out.println(count);
-          System.out.println(requirement1);
+          System.out.println("This run took " + count + " tries!");
           showDetails = false; // found it!
         }
       }
