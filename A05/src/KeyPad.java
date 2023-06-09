@@ -9,38 +9,48 @@ import java.util.Scanner;
 
 public class KeyPad {
   public static void main(String[] args) {
+
     // setup/input section
     String inputValue;
-    String outputValue = "";
-
     Scanner s = new Scanner(System.in);
-    System.out.println();
-    System.out.print("Enter phone number:");
-    inputValue = s.nextLine().toUpperCase();
-    s.close();
-    // processing section
+    final String sentinelValue = "sentinel";
+    do {
+      // setup in the loop
+      String outputValue = "";
 
-    // loop through each characters
-    // convert letters to the mapped number
-    // other characters pass straight through
+      // getting input in the loop
+      System.out.println();
+      System.out.print("Enter phone number:");
+      inputValue = s.nextLine();
 
-    for (char c : inputValue.toCharArray()) {
-      if (Character.isLetter(c)) {
-        // letters, get converted to the number for dialing.
-        outputValue = outputValue + GetNumber(c);
-      } else {
-        // not letters are just adding it back in without tranformation
-        outputValue = outputValue + c;
+      // checking to exit the loop
+      if (inputValue.equals(sentinelValue)) {
+        // System.out.print("All Done. Thanks for entering the value to end!");
+        break; // exits the loop,
       }
-    }
 
-    // output section
-    System.out.println();
-    System.out.println("You entered:\t" + inputValue);
-    System.out.println("Phone Number:\t" + outputValue);
+      // processing section in the loop.
+      // loop through each characters
+      // convert letters to the mapped number
+      // other characters pass straight through
+      for (char c : inputValue.toCharArray()) {
+        if (Character.isLetter(c)) {
+          // letters, get converted to the number for dialing.
+          outputValue = outputValue + GetNumber(Character.toUpperCase(c));
+        } else {
+          // not letters are just adding it back in without tranformation
+          // this is likely for numbers, dashes, and parenthisis or +
+          outputValue = outputValue + c;
+        }
+      }
 
-    // cleanup section, any resources to close?
-
+      // output section - still in the loop.
+      System.out.println();
+      System.out.println("You entered:\t" + inputValue);
+      System.out.println("Phone Number:\t" + outputValue);
+    } while (inputValue != sentinelValue);
+    // close out
+    s.close();
   }
 
   public static int GetNumber(char uppercaseLetter) {
