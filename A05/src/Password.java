@@ -2,7 +2,7 @@
 // Term:        Summer 2023
 // Name:        Matthew Gibson
 // Instructor:  Dr. Haddad
-// Assignment:  4
+// Assignment:  5
 // IDE Name:    VS Code
 
 import java.util.Scanner;
@@ -59,7 +59,7 @@ public class Password {
       testOnlyLettersAndDigits = testOnlyLettersAndDigits(enteredPassword);
 
       // Debug Section
-      boolean debug = true;
+      boolean debug = false;
       if (debug) {
         System.out.println();
         System.out.println("Debug");
