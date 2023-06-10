@@ -18,9 +18,11 @@ public class PasswordTest {
     boolean testOneNotLetterNotDigit;
     String enteredPassword;
     String verdict;
-    // String userContinue = "Y";
+    final String SENTINELCONTINUEANSWER = "Y";
+    String sentinelResponse = SENTINELCONTINUEANSWER;
 
     Scanner scan = new Scanner(System.in);
+    Scanner scanSentinel = new Scanner(System.in);
 
     // one time instructions
     System.out.println();
@@ -28,52 +30,57 @@ public class PasswordTest {
     System.out.println("\tleast one upper-case letter, at least one digit, and at least one character that is ");
     System.out.println("\tneither a letter nor a digit.");
 
-    enteredPassword = "";
+    while (SENTINELCONTINUEANSWER.equalsIgnoreCase(sentinelResponse)) {
+      { // reset value for each loop.
+        testLength = false;
+        testOneLowercase = false;
+        testOneUppercase = false;
+        testOneDigit = false;
+        testOneNotLetterNotDigit = false;
+        enteredPassword = "";
+        verdict = "";
 
-    { // reset value for each loop.
-      testLength = false;
-      testOneLowercase = false;
-      testOneUppercase = false;
-      testOneDigit = false;
-      testOneNotLetterNotDigit = false;
-      enteredPassword = "";
-      verdict = "";
+        System.out.println();
+        System.out.print("Please enter a password:\t");
+        enteredPassword = scan.nextLine().trim();
 
-      System.out.println();
-      System.out.print("Please enter a password:\t");
-      enteredPassword = scan.nextLine().trim();
+        // processing section
+        // Test: atleast 7 characters
+        testLength = (enteredPassword.length() >= 7) ? true : false;
 
-      // processing section
-      // Test: atleast 7 characters
-      testLength = (enteredPassword.length() >= 7) ? true : false;
+        // loop through the string (foreach) and test each character for each test.
+        // each test has only to be true one time for the value to stay true at the end
+        for (char c : enteredPassword.toCharArray()) {
+          // Test: includes one lowercase letter
+          testOneLowercase = (Character.isLowerCase(c)) ? true : testOneLowercase;
+          // Test: includes one uppercase letter
+          testOneUppercase = (Character.isUpperCase(c)) ? true : testOneUppercase;
+          // Test: includes one digit
+          testOneDigit = (Character.isDigit(c)) ? true : testOneDigit;
+          // Test: includes one neither letter or digit (symbol?)
+          testOneNotLetterNotDigit = (!Character.isLetterOrDigit(c)) ? true : testOneNotLetterNotDigit;
+        }
 
-      // loop through the string (foreach) and test each character for each test.
-      // each test has only to be true one time for the value to stay true at the end
-      for (char c : enteredPassword.toCharArray()) {
-        // Test: includes one lowercase letter
-        testOneLowercase = (Character.isLowerCase(c)) ? true : testOneLowercase;
-        // Test: includes one uppercase letter
-        testOneUppercase = (Character.isUpperCase(c)) ? true : testOneUppercase;
-        // Test: includes one digit
-        testOneDigit = (Character.isDigit(c)) ? true : testOneDigit;
-        // Test: includes one neither letter or digit (symbol?)
-        testOneNotLetterNotDigit = (!Character.isLetterOrDigit(c)) ? true : testOneNotLetterNotDigit;
+        // only if all are true is it a valid password
+        if (testLength && testOneLowercase && testOneUppercase && testOneDigit && testOneNotLetterNotDigit) {
+          verdict = "Valid Password";
+        } else {
+          verdict = "Invalid Password";
+        }
+        // output section
+        System.out.println();
+        System.out.println("Entered Password:\t\t" + enteredPassword);
+        System.out.println("Verdict:\t\t\t" + verdict);
       }
-
-      // only if all are true is it a valid password
-      if (testLength && testOneLowercase && testOneUppercase && testOneDigit && testOneNotLetterNotDigit) {
-        verdict = "Valid Password";
-      } else {
-        verdict = "Invalid Password";
-      }
-      // output section
       System.out.println();
-      System.out.println("Entered Password:\t\t" + enteredPassword);
-      System.out.println("Verdict:\t\t\t" + verdict);
+      System.out.print("Enter Y to continue:\t");
+      sentinelResponse = scanSentinel.nextLine().trim();
+
     }
 
     // cleanup section, any resources to close?
     scan.close();
+    scanSentinel.close();
 
   }
 }
