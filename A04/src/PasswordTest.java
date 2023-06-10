@@ -18,7 +18,8 @@ public class PasswordTest {
     boolean testOneNotLetterNotDigit;
     String enteredPassword;
     String verdict;
-    final String sentinelValue = "sentinel";
+    // String userContinue = "Y";
+
     Scanner scan = new Scanner(System.in);
 
     // one time instructions
@@ -27,14 +28,9 @@ public class PasswordTest {
     System.out.println("\tleast one upper-case letter, at least one digit, and at least one character that is ");
     System.out.println("\tneither a letter nor a digit.");
 
-    System.out.println();
-    System.out.println("Just type " + sentinelValue + " to stop the program.");
-
     enteredPassword = "";
 
-    // runs for each prompt to collect, analyze, and output
-    do {
-      // reset value for each loop.
+    { // reset value for each loop.
       testLength = false;
       testOneLowercase = false;
       testOneUppercase = false;
@@ -47,18 +43,12 @@ public class PasswordTest {
       System.out.print("Please enter a password:\t");
       enteredPassword = scan.nextLine().trim();
 
-      if (enteredPassword.equals(sentinelValue)) {
-        System.out.print("All Done.  Thanks for entering the value to end!");
-        break; // exits the loop,
-      }
-
       // processing section
       // Test: atleast 7 characters
       testLength = (enteredPassword.length() >= 7) ? true : false;
 
       // loop through the string (foreach) and test each character for each test.
       // each test has only to be true one time for the value to stay true at the end
-
       for (char c : enteredPassword.toCharArray()) {
         // Test: includes one lowercase letter
         testOneLowercase = (Character.isLowerCase(c)) ? true : testOneLowercase;
@@ -80,8 +70,7 @@ public class PasswordTest {
       System.out.println();
       System.out.println("Entered Password:\t\t" + enteredPassword);
       System.out.println("Verdict:\t\t\t" + verdict);
-
-    } while (enteredPassword != sentinelValue);
+    }
 
     // cleanup section, any resources to close?
     scan.close();

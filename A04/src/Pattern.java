@@ -18,12 +18,12 @@ public class Pattern {
 
       // spaces to move number to the right
       for (int j = 1; j <= rows - i; j++) { // counting up
-        System.out.print(" ");
+        System.out.print("\t");
       }
 
       // numbers
       for (int k = 1; k <= i; k++) {
-        System.out.print(k);
+        System.out.print("\t" + k);
       }
 
       System.out.println(); // move to the next line
