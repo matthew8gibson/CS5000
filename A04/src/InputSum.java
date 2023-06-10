@@ -1,4 +1,3 @@
-
 // Class:       CS 5000 / W01
 // Term:        Summer 2023
 // Name:        Matthew Gibson
@@ -9,43 +8,58 @@
 import java.util.Scanner;
 
 public class InputSum {
-
   public static void main(String[] args) {
+    // program used variables
+    int sum;
+    String promptMessage = "Enter positive integers (-1 to quit):\t";
+    String outerLoopPromptMessage = "Do you want to keep going? (y):\t";
+    String outerLoopSentinelValue = "Y";
 
-    {
-      // setup section
-      int sum = 0, value;
-      String allEnteredNumbers = "";
-      Scanner scan = new Scanner(System.in);
+    // user input values
+    int value = 0;
+    String enteredNumbers = "";
+    String outerLoopsEnteredValue = "Y";
 
-      // Processing and taking input section
-      System.out.print("Enter positive integers (-1 to quit): ");
-      do {
+    // system objects to use to get user input
+    Scanner scan = new Scanner(System.in);
+    Scanner scanOutter = new Scanner(System.in);
 
-        value = scan.nextInt();
-        if (value > 0) { // not counting negative numbers
-          if (allEnteredNumbers != "") {
-            // not the first time, so include the comma
-            allEnteredNumbers = allEnteredNumbers.concat(", ");
-          }
-          // only adding positive numbers
-          allEnteredNumbers = allEnteredNumbers.concat(String.valueOf(value));
+    // outer loop, designed to prompt for Y to keep going.
+    while (outerLoopsEnteredValue.equalsIgnoreCase(outerLoopSentinelValue)) {
+      // inner application, core funtionality of InputSum
+      // prompt for Numbers
+      System.out.println();
+      System.out.print(promptMessage);
+      value = scan.nextInt();
+      // // System.out.println("Debugging: first value:\t" + value);
+      sum = 0;
+      enteredNumbers = "";
+
+      while (value != -1) {
+        if (value > 0) { // only counting postive numbers.
           sum = sum + value;
-
-        } else {
-          // negative numbers hit here. they are not added to the string or sum
+          if (enteredNumbers.length() > 0) {
+            // only adding the comma and space after the first run.
+            enteredNumbers = enteredNumbers + ", ";
+          }
+          enteredNumbers = enteredNumbers.concat(String.valueOf(value));
+          // System.out.println("Debugging: Entered Numbers:\t" + enteredNumbers);
+          // System.out.println("Debugging: The sum so far is:\t" + sum);
         }
-        // System.out.println("Debugging: The sum so far is " + sum);
-      } while (value != -1); // end the loop when sentinel value is entered
-
+        value = scan.nextInt();
+      }
       // output section
       System.out.println();
-      System.out.println("Entered numbers:\t" + allEnteredNumbers);
+      System.out.println("Entered Numbers:\t" + enteredNumbers);
       System.out.println("The Sum:\t\t" + sum);
 
-      // cleanup
-      scan.close(); // cleaning up resources
+      // outer loop prompt
+      System.out.println();
+      System.out.print(outerLoopPromptMessage);
+      outerLoopsEnteredValue = scanOutter.nextLine();
     }
-
+    // close out resources.
+    scan.close();
+    scanOutter.close();
   }
 }
