@@ -10,11 +10,15 @@ import java.util.Scanner;
 public class KeyPad {
   public static void main(String[] args) {
 
+    // out loops
+    final String SENTINELCONTINUEANSWER = "Y";
+    String sentinelResponse = SENTINELCONTINUEANSWER;
+    Scanner scan = new Scanner(System.in);
+
     // setup/input section
     String inputValue;
     Scanner s = new Scanner(System.in);
-    final String sentinelValue = "sentinel";
-    do {
+    while (SENTINELCONTINUEANSWER.equalsIgnoreCase(sentinelResponse)) {
       // setup in the loop
       String outputValue = "";
 
@@ -22,12 +26,6 @@ public class KeyPad {
       System.out.println();
       System.out.print("Enter phone number:");
       inputValue = s.nextLine();
-
-      // checking to exit the loop
-      if (inputValue.equals(sentinelValue)) {
-        // System.out.print("All Done. Thanks for entering the value to end!");
-        break; // exits the loop,
-      }
 
       // processing section in the loop.
       // loop through each characters
@@ -48,9 +46,17 @@ public class KeyPad {
       System.out.println();
       System.out.println("You entered:\t" + inputValue);
       System.out.println("Phone Number:\t" + outputValue);
-    } while (inputValue != sentinelValue);
+
+      // wrapping up the loop
+      System.out.println();
+      System.out.print("Enter Y to continue:\t");
+      sentinelResponse = scan.nextLine().trim();
+    }
+
     // close out
     s.close();
+    scan.close();
+
   }
 
   public static int GetNumber(char uppercaseLetter) {
