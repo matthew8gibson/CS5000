@@ -10,6 +10,10 @@ import java.util.Scanner;
 public class Password {
   public static void main(String[] args) {
 
+    // out loops
+    final String SENTINELCONTINUEANSWER = "Y";
+    String sentinelResponse = SENTINELCONTINUEANSWER;
+
     // setup/input section
     boolean testLength;
     boolean testLowercase;
@@ -18,7 +22,7 @@ public class Password {
     boolean testOnlyLettersAndDigits;
     String enteredPassword = "";
     String verdict;
-    final String sentinelValue = "sentinel";
+
     final int lengthRequirement = 9;
     final int lowercaseRequirementCount = 3;
     final int uppercaseRequirementCount = 3;
@@ -26,11 +30,8 @@ public class Password {
 
     Scanner scan = new Scanner(System.in);
 
-    System.out.println();
-    System.out.println("Just type " + sentinelValue + " to stop the program.");
-
     // runs for each prompt to collect, analyze, and output
-    do {
+    while (SENTINELCONTINUEANSWER.equalsIgnoreCase(sentinelResponse)) {
       // reset value for each loop.
       testLength = false;
       testLowercase = false;
@@ -40,16 +41,10 @@ public class Password {
       enteredPassword = "";
       verdict = "";
 
+      // starting the processing of the password
       System.out.println();
       System.out.print("Please enter a password:\t");
       enteredPassword = scan.nextLine().trim();
-
-      if (enteredPassword.equals(sentinelValue)) {
-        // System.out.print("All Done. Thanks for entering the value to end!");
-        break; // exits the loop,
-      }
-
-      // processing the data section
 
       // Performing all the tests
       testLength = TestLength(enteredPassword, lengthRequirement);
@@ -81,7 +76,11 @@ public class Password {
       System.out.println("Entered Password:\t\t" + enteredPassword);
       System.out.println("Verdict:\t\t\t" + verdict);
 
-    } while (enteredPassword != sentinelValue);
+      // wrapping up the loop
+      System.out.println();
+      System.out.print("Enter Y to continue:\t");
+      sentinelResponse = scan.nextLine().trim();
+    }
 
     // cleanup section, any resources to close?
     scan.close();
