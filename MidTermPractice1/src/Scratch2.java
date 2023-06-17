@@ -11,5 +11,6 @@ public class Scratch2 {
     scan.close();
 
     "jello".indexOf("el");
+
   }
 }
