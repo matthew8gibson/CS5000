@@ -74,16 +74,73 @@ public class CountOccurrences {
       }
     }
 
-    // now give the output but not 0's
-    for (int i = 1; i < countOfEachNumber.length; i++) {
-      if (countOfEachNumber[i] > 0) {
-        String sIfPlural = (countOfEachNumber[i] == 1) ? "" : "s";
-        System.out.printf("%d occurred\t %d time%s\n", i, countOfEachNumber[i],
+    // Looping through the countOfEachNumber
+    // problem is this sorts the output from lowest to hightest.
+    /*
+     * for (int i = 1; i < countOfEachNumber.length; i++) {
+     * if (countOfEachNumber[i] > 0) {
+     * String sIfPlural = (countOfEachNumber[i] == 1) ? "" : "s";
+     * System.out.printf("%d occurred\t %d time%s\n", i, countOfEachNumber[i],
+     * sIfPlural);
+     * }
+     * }
+     */
+
+    // create a new array of all the values in the other they were entered
+    // loop through existing array.
+    // Add new items only if not equal 0 and not already in there.
+
+    int[] outputArray = new int[100];
+    int k = 0; // current location in outputArray
+    for (int i = 0; i < inputArray.length; i++) {
+      // System.out.println("working: " + inputArray[0]);
+      if (containsNumber(outputArray, inputArray[i])) {
+        // nothing to do if it already contains.
+      } else {
+        // System.out.print("asdf");
+        outputArray[k] = inputArray[i]; // do this when not found already
+        k++; // setup the next spot for a number to go
+      }
+    } // end of for loop
+
+    /*
+     * debug = true;
+     * if (debug) {
+     * for (int i = 0; i < outputArray.length; i++) {
+     * System.out.println("confirm output array");
+     * if (outputArray[i] != 0) {
+     * System.out.print(outputArray[i]);
+     * }
+     * }
+     * }
+     */
+
+    /*
+     * System.out.println(outputArray.length);
+     * System.out.println(outputArray[0]);
+     * System.out.println(outputArray[1]);
+     * System.out.println(outputArray[2]);
+     */
+    // outputArray is populated with the values entered in order no dups
+    for (int i = 0; i < outputArray.length; i++) {
+
+      if (outputArray[i] > 0) {
+        // System.out.println("debug: " + outputArray[i]);
+        String sIfPlural = (countOfEachNumber[outputArray[i]] == 1) ? "" : "s";
+        System.out.printf("%d occurred\t %d time%s\n", outputArray[i],
+            countOfEachNumber[outputArray[i]],
             sIfPlural);
       }
 
     }
+  }
 
-    // conditional
+  public static boolean containsNumber(int[] array, int number) {
+    for (int element : array) {
+      if (element == number) {
+        return true; // found it!
+      }
+    }
+    return false;
   }
 }
