@@ -5,9 +5,6 @@
 // Assignment:  6
 // IDE Name:    VS Code
 
-/**
- * CountOccurrences
- */
 import java.util.Scanner;
 
 public class CountOccurrences {
@@ -17,35 +14,32 @@ public class CountOccurrences {
     Scanner scan = new Scanner(System.in);
     int sentinelValueInner = 0;
     String sentinelValueOuter = "Y";
-    Boolean debug = false;
+    int countOfIntegersToAccept = 10;
 
     // outer while loop, which controls the question to continue.
     while (sentinelValueOuter.equals("Y")) {
       // inner while loop setup
       int count = 0;
-      int[] arrayEntered = new int[10];
+      int[] arrayEntered = new int[countOfIntegersToAccept];
       System.out.print("Enter up to 10 integers between 1 and 100 (0 to stop):");
       while (true) { // inner while loop (collecting the integers)
         int numberEntered = scan.nextInt();
         if (numberEntered == sentinelValueInner) {
           break; // exits the inner loop, but not the outer
-        } else {
-          // do stuff
         }
         if (numberEntered >= 1 && numberEntered <= 100) {
-          // count it!
-          arrayEntered[count] = numberEntered;
+          arrayEntered[count] = numberEntered; // record it it!
           count++;
-        } // if not true, then we don't count it!1
+        } // if not true, then we don't record it
       } // end of inner loop
+      Boolean debug = false;
       if (debug) {
         System.out.println("array:");
         for (int i = 0; i < arrayEntered.length; i++) {
           System.out.println("Place " + i + " is: " + arrayEntered[i]);
         }
       }
-      Count(arrayEntered);
-      // send the data to be processed and printed
+      Count(arrayEntered); // send the data to be processed and printed
 
       scan.nextLine(); // clear the input buffer
       System.out.print("Do you want to continue? (Y to continue):\t");
@@ -57,6 +51,9 @@ public class CountOccurrences {
   }
 
   public static void Count(int[] inputArray) {
+
+    // Counting the values
+
     // create an array the size of all possible values to store each count.
     int[] countOfEachNumber = new int[101];
 
@@ -74,18 +71,7 @@ public class CountOccurrences {
       }
     }
 
-    // Looping through the countOfEachNumber
-    // problem is this sorts the output from lowest to hightest.
-    /*
-     * for (int i = 1; i < countOfEachNumber.length; i++) {
-     * if (countOfEachNumber[i] > 0) {
-     * String sIfPlural = (countOfEachNumber[i] == 1) ? "" : "s";
-     * System.out.printf("%d occurred\t %d time%s\n", i, countOfEachNumber[i],
-     * sIfPlural);
-     * }
-     * }
-     */
-
+    // creating an arry of values to output
     // create a new array of all the values in the other they were entered
     // loop through existing array.
     // Add new items only if not equal 0 and not already in there.
@@ -102,26 +88,8 @@ public class CountOccurrences {
         k++; // setup the next spot for a number to go
       }
     } // end of for loop
-
-    /*
-     * debug = true;
-     * if (debug) {
-     * for (int i = 0; i < outputArray.length; i++) {
-     * System.out.println("confirm output array");
-     * if (outputArray[i] != 0) {
-     * System.out.print(outputArray[i]);
-     * }
-     * }
-     * }
-     */
-
-    /*
-     * System.out.println(outputArray.length);
-     * System.out.println(outputArray[0]);
-     * System.out.println(outputArray[1]);
-     * System.out.println(outputArray[2]);
-     */
     // outputArray is populated with the values entered in order no dups
+
     for (int i = 0; i < outputArray.length; i++) {
 
       if (outputArray[i] > 0) {
@@ -141,6 +109,6 @@ public class CountOccurrences {
         return true; // found it!
       }
     }
-    return false;
+    return false;// not in there.
   }
 }
