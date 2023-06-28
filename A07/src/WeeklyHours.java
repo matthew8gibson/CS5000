@@ -19,26 +19,53 @@ public class WeeklyHours {
         arrayHoursWorked[i][j] = GenerateDailyHours();
       }
     }
-    // print the arry as a table
-    // header
+
+    // print the table header
     System.out.println();
     System.out.println("\t\tMon\tTue\tWed\tThu\tFri\tSat\tSun");
 
-    // table body
+    // print the table body
     for (int i = 0; i < numberOfEmployees; i++) {
-      System.out.printf("Employee%d\t ", i + 1);
+      System.out.printf("Employee%d\t ", i + 1); // first column
       for (int j = 0; j < daysOfTheWeek; j++) {
-        System.out.print(arrayHoursWorked[i][j] + "\t ");
+        System.out.print(arrayHoursWorked[i][j] + "\t "); // other columns
       }
-      System.out.println();
+      System.out.println(); // space after the table to make it less cluttered
     }
+
+    // call function to summarize hours per employee
+    addHours(arrayHoursWorked);
 
   }
 
   public static int GenerateDailyHours() {
-    // The main method populates the array with random numbers between 0 and 10
-    return (int) ((Math.random() * 10) + 1);
-
+    // generates random numbers between 0 and 10
+    return (int) ((Math.random() * 11));
   }
 
+  public static void addHours(int[][] inputArray) {
+    // create table to summarize Weekly Hours per employee
+    int[][] weeklyHoursPerEmployee = new int[3][2];
+
+    // populating the table to summarize weekly hours per employee
+    for (int i = 0; i < inputArray.length; i++) {
+      // summarize here per employee
+      weeklyHoursPerEmployee[i][0] = i; // populating employee ID
+      int employeesWeeklyHours = 0;
+      for (int j = 0; j < inputArray[i].length; j++) {
+        employeesWeeklyHours = employeesWeeklyHours + inputArray[i][j];
+      } // end of looping through an week of work
+      weeklyHoursPerEmployee[i][1] = employeesWeeklyHours; // populating total hours worked
+    } // end of looping through an employee
+
+    // table header
+    System.out.println();
+    System.out.printf("%12s \t %12s%n", "Employee#", "Weekly Hours");
+    System.out.println("----------------------------------");
+
+    // table body
+    for (int[] employeeRow : weeklyHoursPerEmployee) {
+      System.out.printf("%7d \t %6d%n", employeeRow[0], employeeRow[1]);
+    }
+  }
 }
