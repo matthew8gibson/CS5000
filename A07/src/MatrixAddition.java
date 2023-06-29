@@ -5,31 +5,62 @@
 // Assignment:  7
 // IDE Name:    VS Code
 
+import java.util.Scanner;
+
 public class MatrixAddition {
 
   public static void main(String[] args) {
+
+    // setup sentinel
+    Scanner scan = new Scanner(System.in);
+    String sentinelValue = "Y";
+    String sentinelResponse = "Y";
 
     // setup
     int rows = 3, columns = 3;
     int[][] matrixA = new int[rows][columns];
     int[][] matrixB = new int[rows][columns];
 
-    Boolean autoPopulateMatrixes = true;
-    if (autoPopulateMatrixes) {
-      PopulateMatrixes(matrixA);
-      PopulateMatrixes(matrixB);
-    } else {
-      // prompt for populating the matrix, then sentinel loop
+    // true lets you test with random numbers
+    // rather than have to enter numbers every time
+    Boolean autoPopulateMatrixes = false;
+
+    while (sentinelResponse.equals(sentinelValue)) {
+      if (autoPopulateMatrixes) {
+        PopulateMatrixes(matrixA);
+        PopulateMatrixes(matrixB);
+      } else {
+        // end-user entering matrix values
+        System.out.println();
+        System.out.print("Please enter 9 integers for Matrix A:\t");
+        for (int i = 0; i < matrixA.length; i++) {
+          for (int j = 0; j < matrixA.length; j++) {
+            matrixA[i][j] = scan.nextInt();
+          }
+        } // end of for loop collecting numbers
+        scan.nextLine(); // clear any extra entries
+        System.out.println();
+        System.out.print("Please enter 9 integers for Matrix B:\t");
+        for (int i = 0; i < matrixB.length; i++) {
+          for (int j = 0; j < matrixB.length; j++) {
+            matrixB[i][j] = scan.nextInt();
+          }
+        } // end of for loop collecting numbers
+        scan.nextLine(); // clear any extra entries
+      }
+      // show content of Matrixes
+      System.out.println();
+      PrintMatrix("Matrix A:", matrixA);
+      PrintMatrix("Matrix B:", matrixB);
+
+      // Add the matrixes and print them
+      add(matrixA, matrixB);
+      // sentinel checking
+      System.out.print("Do you want to do it again? (Y to continue): ");
+      sentinelResponse = scan.nextLine().toUpperCase().trim();
     }
 
-    // show content of Matrixes
-    System.out.println();
-    PrintMatrix("Matrix A:", matrixA);
-    PrintMatrix("Matrix B:", matrixB);
-
-    // Add the matrixes and print them
-    add(matrixA, matrixB);
-
+    scan.close();
   }
 
   public static void PopulateMatrixes(int[][] inputMatrix) {
@@ -37,7 +68,7 @@ public class MatrixAddition {
     // created to testing to save time
     for (int i = 0; i < inputMatrix.length; i++) {
       for (int j = 0; j < inputMatrix.length; j++) {
-        inputMatrix[i][j] = (int) (Math.random() * 10);
+        inputMatrix[i][j] = (int) (Math.random() * 4);
       }
     }
   }
