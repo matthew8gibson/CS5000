@@ -65,7 +65,7 @@ public class WeeklyHours {
 
     // table body
     for (int[] employeeRow : weeklyHoursPerEmployee) {
-      System.out.printf("%7d \t %6d%n", employeeRow[0], employeeRow[1]);
+      System.out.printf("%7d \t %6d%n", employeeRow[0] + 1, employeeRow[1]);
     }
   }
 }
