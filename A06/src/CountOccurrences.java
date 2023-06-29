@@ -23,12 +23,12 @@ public class CountOccurrences {
       int count = 0;
       int[] arrayEntered = new int[countOfIntegersToAccept];
       System.out.print("Enter up to 10 integers between 1 and 100 (0 to stop):\t");
-      while (true) { // inner while loop (collecting the integers)
+      while (count < countOfIntegersToAccept) { // inner while loop (collecting the integers)
         int numberEntered = scan.nextInt();
         if (numberEntered == sentinelValueInner) {
           break; // exits the inner loop, but not the outer
         }
-        if (numberEntered >= 1 && numberEntered <= 100) {
+        if (numberEntered >= 1 && numberEntered <= 100 && count < countOfIntegersToAccept) {
           arrayEntered[count] = numberEntered; // record it it!
           count++;
         } // if not true, then we don't record it
