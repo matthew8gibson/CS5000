@@ -11,6 +11,7 @@ public class Rectangle {
 
   private double width;
   private double height;
+  private String name;
 
   public Rectangle() {
     width = 1.0;
@@ -20,6 +21,14 @@ public class Rectangle {
   public Rectangle(double height, double width) {
     this.height = height;
     this.width = width;
+  }
+
+  public String getName() {
+    return name;
+  }
+
+  public void setName(String name) {
+    this.name = name;
   }
 
   public double getWidth() {
@@ -38,8 +47,18 @@ public class Rectangle {
     return ((2 * height) + (2 * width));
   }
 
-  public void toString(String rectangleName) {
-    System.out.printf("Rectangle %s is %d units wide and %d units high.", rectangleName, width, height);
+  public String toString() {
+    return String.format("Rectangle %s is %f units wide and %f units high.\n", name, width, height);
+  }
 
+  public static void DisplayRectangle(Rectangle printRectangle) {
+    System.out.println();
+    System.out.printf("%s:\n", printRectangle.getName());
+    System.out.println("----------------");
+    System.out.printf("Width:\t\t%s\n", String.format("%.2f", printRectangle.getWidth()));
+    System.out.printf("Height:\t\t%s\n", String.format("%.2f", printRectangle.getHeight()));
+    System.out.printf("Area:\t\t%s\n", String.format("%.2f", printRectangle.getArea()));
+    System.out.printf("Perimter:\t%s\n", String.format("%.2f", printRectangle.getPerimter()));
+    System.out.println();
   }
 }
