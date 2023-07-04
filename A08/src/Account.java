@@ -77,11 +77,13 @@ public class Account {
     return balance * getMonthlyInterestRate();
   }
 
-  public void withdraw(double withdrawalAmount) {
-    assert withdrawalAmount > 0 : "Withdrawal amount must be > 0.";
+  public Boolean withdraw(double withdrawalAmount) {
     // handle account overdraft
-    assert balance < withdrawalAmount : "You can NOT withdraw more than the balance.";
+    if (balance < withdrawalAmount) {
+      return false;
+    }
     balance = balance - withdrawalAmount;
+    return true;
 
   }
 

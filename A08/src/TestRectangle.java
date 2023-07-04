@@ -33,23 +33,4 @@ public class TestRectangle {
     scan.close();
   }
 
-  private double PromptDouble(String prompt, char promptType) {
-
-    System.out.print(prompt + ":\t");
-    switch (promptType) {
-      case 'd':
-
-        break;
-      case 's':
-
-        break;
-      case 'i':
-
-        break;
-
-      default:
-        break;
-    }
-  }
-
 }
