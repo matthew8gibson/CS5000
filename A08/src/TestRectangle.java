@@ -7,7 +7,7 @@
 // IDE Name: VS Code
 import java.util.Scanner;
 
-@SuppressWarnings("unused")
+//@SuppressWarnings("unused")
 
 public class TestRectangle {
 
@@ -23,7 +23,7 @@ public class TestRectangle {
     // print it out
     System.out.println();
     System.out.println(myRectangle.toString());
-    Rectangle.DisplayRectangle(myRectangle);
+    myRectangle.displaySummary();
 
     /*
      * // user input (one cycle)

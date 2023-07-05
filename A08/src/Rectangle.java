@@ -5,8 +5,6 @@
 // Assignment: 8
 // IDE Name: VS Code
 
-@SuppressWarnings("unused")
-
 public class Rectangle {
 
   private double width;
@@ -51,14 +49,14 @@ public class Rectangle {
     return String.format("Rectangle %s is %f units wide and %f units high.\n", name, width, height);
   }
 
-  public static void DisplayRectangle(Rectangle printRectangle) {
+  public void displaySummary() {
     System.out.println();
-    System.out.printf("%s:\n", printRectangle.getName());
+    System.out.printf("%s:\n", name);
     System.out.println("----------------");
-    System.out.printf("Width:\t\t%s\n", String.format("%.2f", printRectangle.getWidth()));
-    System.out.printf("Height:\t\t%s\n", String.format("%.2f", printRectangle.getHeight()));
-    System.out.printf("Area:\t\t%s\n", String.format("%.2f", printRectangle.getArea()));
-    System.out.printf("Perimter:\t%s\n", String.format("%.2f", printRectangle.getPerimter()));
+    System.out.printf("Width:\t\t%s\n", String.format("%.2f", width));
+    System.out.printf("Height:\t\t%s\n", String.format("%.2f", height));
+    System.out.printf("Area:\t\t%s\n", String.format("%.2f", getArea()));
+    System.out.printf("Perimter:\t%s\n", String.format("%.2f", getPerimter()));
     System.out.println();
   }
 }
