@@ -46,11 +46,11 @@ public class Rectangle {
   }
 
   public String toString() {
-    return String.format("Rectangle %s is %f units wide and %f units high.\n", name, width, height);
+    return String.format("Rectangle %s is %.1f units wide and %.1f units high.\n", name, width, height);
   }
 
   public void displaySummary() {
-    System.out.println();
+
     System.out.printf("%s:\n", name);
     System.out.println("----------------");
     System.out.printf("Width:\t\t%s\n", String.format("%.2f", width));
