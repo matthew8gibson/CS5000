@@ -29,7 +29,7 @@ public class _starterFile {
                   // section of code which will be optionally run multiple times - END
 
                   // sentinel checking
-                  System.out.print("Do you want to do it again? (Y to continue): ");
+                  System.out.print("Would you like to run program again (y/n)? ");
                   sentinelResponse = scan.nextLine().toUpperCase().trim();
 
             }
