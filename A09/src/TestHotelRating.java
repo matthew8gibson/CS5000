@@ -5,6 +5,8 @@
 // Assignment: 9
 // IDE Name: VS Code
 
+import java.lang.reflect.Array;
+import java.util.Arrays;
 import java.util.Scanner;
 
 @SuppressWarnings("unused")
@@ -17,19 +19,50 @@ public class TestHotelRating {
             Scanner scan = new Scanner(System.in);
             int numberOfYears, numberOfHotels;
 
-            System.out.println("Hello You!");
-
             // Allow the user to enter number of years and number of hotels. Do not
             // hard-code the array size.
             numberOfHotels = gatherPositiveInt("How many hotels?\t");
             // System.out.println(numberOfHotels);
-            numberOfYears = gatherPositiveInt("How many years?\t");
+            numberOfYears = gatherPositiveInt("How many years?\t\t");
             // System.out.println(numberOfYears);
 
             // create object
             HotelRating myHotelRating = new HotelRating(numberOfHotels, numberOfYears);
-            myHotelRating.printChart();
 
+            // generate output
+            // System.out.println("Five stars hotels indices:\t\t" +
+            // Arrays.toString(myHotelRating.fiveStarsHotels()));
+
+            System.out.print("Five stars hotels indices:\t\t");
+            // handling blank array
+            if (myHotelRating.fiveStarsHotels().length == 0) {
+                  System.out.print("none");
+            } else {
+                  // array has contents
+                  // conditionally adding commas
+                  int count = 0;
+                  for (int i = 0; i < myHotelRating.fiveStarsHotels().length; i++) {
+                        if (count > 0) {
+                              System.out.print(", ");
+                        }
+                        System.out.print(myHotelRating.fiveStarsHotels()[i]);
+                        count = count + 1;
+                  } /// end of array
+            }
+            System.out.print("\n"); // return carraige after list of five star hotels.
+
+            myHotelRating.averageRatings();
+            myHotelRating.fourOrMoreStars();
+            System.out.printf("Any five stars hotel?\t\t\t" + myHotelRating.anyFiveStars().toString() + "\n");
+            System.out.println("Best hotel index:\t\t\t" + myHotelRating.bestHotel());
+            System.out.println("Worst hotel index:\t\t\t" + myHotelRating.worstHotel());
+            /*
+             * for (double rate : myHotelRating.averageRatingsPerHotel) {
+             * System.out.println(rate);
+             * }
+             */
+
+            myHotelRating.printChart();
             // cleanup
             scan.close();
 
