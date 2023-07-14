@@ -5,10 +5,6 @@
 // Assignment: 9
 // IDE Name: VS Code
 
-import java.util.Scanner;
-
-@SuppressWarnings("unused")
-
 public class HotelRating {
 
       private int numberOfHotels;
@@ -16,7 +12,7 @@ public class HotelRating {
       final private int LOWEST_POSSIBLE_SCORE = 1;
       final private int HIGHEST_POSSIBLE_SCORE = 5;
       private int[][] ratings;
-      public double[] averageRatingsPerHotel; // TODO : return this to private
+      private double[] averageRatingsPerHotel;
 
       HotelRating() {
             // default constructor.
@@ -26,7 +22,6 @@ public class HotelRating {
             ratings = new int[numberOfHotels][numberOfYears];
             averageRatingsPerHotel = new double[numberOfHotels];
             generateRatingsArray(numberOfHotels, numberOfYears, ratings);
-
       }
 
       HotelRating(int hotels, int years) {
@@ -36,7 +31,6 @@ public class HotelRating {
             ratings = new int[numberOfHotels][numberOfYears];
             averageRatingsPerHotel = new double[numberOfHotels];
             generateRatingsArray(numberOfHotels, numberOfYears, ratings);
-
       }
 
       public int[] fiveStarsHotels() {
@@ -63,7 +57,6 @@ public class HotelRating {
             }
 
             return resizedOutput;
-
       }
 
       public void averageRatings() {
@@ -83,7 +76,6 @@ public class HotelRating {
 
                   System.out.printf("%.2f\n", average); // showing the average
             }
-
       }
 
       public void fourOrMoreStars() {
@@ -105,7 +97,6 @@ public class HotelRating {
                   } // end of loop of years
             } // end of loop of hotels
             System.out.print("\n");
-
       }
 
       public Boolean anyFiveStars() {
@@ -204,44 +195,6 @@ public class HotelRating {
             // generating integer between LOWEST_POSSIBLE_SCORE and HIGHEST_POSSIBLE_SCORE
             return (int) ((Math.random() * (HIGHEST_POSSIBLE_SCORE - LOWEST_POSSIBLE_SCORE + 1)
                         + LOWEST_POSSIBLE_SCORE));
-      }
-
-      /*
-       * private void generateAverageRatingsPerHotel() {
-       * int total;
-       * // create an arry to be used for find the best/worst hotels
-       * for (int i = 0; i < ratings[0].length; i++) {
-       * total = 0;
-       * for (int j = 0; j < ratings[i].length; j++) {
-       * total = total + ratings[i][j];
-       * }
-       * averageRatingsPerHotel[i] = (double) total / ratings[1].length;
-       * }
-       * 
-       * }
-       */
-
-      private static void sentinelSnippet() {
-
-            // setup sentinel
-            Scanner scan = new Scanner(System.in);
-            String sentinelValue = "Y";
-            String sentinelResponse = "Y";
-
-            while (sentinelResponse.equals(sentinelValue)) {
-
-                  // section of code which will be optionally run multiple times - BEGIN
-
-                  // section of code which will be optionally run multiple times - END
-
-                  // sentinel checking
-                  System.out.print("Would you like to run program again (y/n)? ");
-                  sentinelResponse = scan.nextLine().toUpperCase().trim();
-
-            }
-
-            // cleanup
-            scan.close();
       }
 
 }
