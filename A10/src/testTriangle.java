@@ -17,68 +17,84 @@ public class testTriangle {
         String triangleName, triangleColor;
         double side1, side2, side3;
         Boolean isFilled;
+        // setup sentinel
+        String sentinelValue = "Y";
+        String sentinelResponse = "Y";
 
-        // Add Sentinel loop
+        // BEGIN Sentinel Loop
+        while (sentinelResponse.equals(sentinelValue)) {
 
-        // Default Constructor Object - BEGIN
-        Triangle myTriangle = new Triangle(); // sets default size 1 X 1 X 1
-        myTriangle.setColor("red");
-        myTriangle.setFilled(true);
-        System.out.println();
-        System.out.println("Default Constructor Triangle:");
-        System.out.println(myTriangle.toString());
+            // section of code which will be optionally run multiple times - BEGIN
 
-        // Default Constructor Object - END
+            // Default Constructor Object - BEGIN
+            Triangle myTriangle = new Triangle(); // sets default size 1 X 1 X 1
+            myTriangle.setColor("red");
+            myTriangle.setFilled(true);
+            System.out.println();
+            System.out.println("Default Constructor Triangle:");
+            System.out.println(myTriangle.toString());
 
-        // User input Object - not default constructor - BEGIN
+            // Default Constructor Object - END
 
-        // prompts
-        System.out.println("Now, We're doing a custom triangle!  Woo Hoo!");
-        System.out.print("What would you like to name it?\t");
-        triangleName = scan.nextLine();
-        Boolean valid = false;
-        do {
-            side1 = gatherPositiveDouble("What is length of side1?\t");
-            side2 = gatherPositiveDouble("What is length of side2?\t");
-            side3 = gatherPositiveDouble("What is length of side3?\t");
-            valid = (isValidTriangle(side1, side2, side3));
-            if (!valid) {
-                System.out.println("Those 3 lengths cannot make a triangle. Try again.");
-            }
-        } while (!valid);
+            // User input Object - not default constructor - BEGIN
 
-        System.out.print("What color ?\t\t\t");
-        triangleColor = scan.nextLine();
+            // prompts
+            System.out.println("Now, We're doing a custom triangle!  Woo Hoo!");
+            System.out.print("What would you like to name it?\t");
+            triangleName = scan.nextLine();
+            Boolean valid = false;
+            do {
+                side1 = gatherPositiveDouble("What is length of side1?\t");
+                side2 = gatherPositiveDouble("What is length of side2?\t");
+                side3 = gatherPositiveDouble("What is length of side3?\t");
+                valid = (isValidTriangle(side1, side2, side3));
+                if (!valid) {
+                    System.out.println("Those 3 lengths cannot make a triangle. Try again.");
+                }
+            } while (!valid);
 
-        System.out.print("Is it Filled (true/false)?\t");
-        isFilled = scan.nextBoolean();
+            System.out.print("What color ?\t\t\t");
+            triangleColor = scan.nextLine();
 
-        // create/update
-        // test all of the class methods, including inherited methods setColor() and
-        // setFilled(), on those 2 objects. Add proper and meaningful labels to your
-        // outputs.
-        Triangle theTriangle = new Triangle(side1, side2, side3, triangleName);
-        theTriangle.setColor(triangleColor);
-        theTriangle.setFilled(isFilled);
+            System.out.print("Is it Filled (true/false)?\t");
+            isFilled = scan.nextBoolean();
 
-        // output 1 - as created
-        System.out.println();
-        System.out.println("Custom User Triangle, first version:");
+            // create/update
+            // test all of the class methods, including inherited methods setColor() and
+            // setFilled(), on those 2 objects. Add proper and meaningful labels to your
+            // outputs.
+            Triangle theTriangle = new Triangle(side1, side2, side3, triangleName);
+            theTriangle.setColor(triangleColor);
+            theTriangle.setFilled(isFilled);
 
-        System.out.println(theTriangle.toString());
+            // output 1 - as created
+            System.out.println();
+            System.out.println("Custom User Triangle, first version:");
 
-        // output 2 - as updated
-        System.out.println();
-        System.out.println("Custom User Triangle, second version (each side is twice as big):");
-        System.out.println("\tnote: this update allows us to use all methods");
-        // the point of these 3 lines is to meet project requirements of:
-        // "test all class methods"
-        theTriangle.setSide1(side1 * 2);
-        theTriangle.setSide2(side2 * 2);
-        theTriangle.setSide3(side3 * 2);
-        System.out.println(theTriangle.toString());
+            System.out.println(theTriangle.toString());
 
-        // User input Object - not default constructor - END
+            // output 2 - as updated
+            System.out.println();
+            System.out.println("Custom User Triangle, second version (each side is twice as big):");
+            System.out.println("\tnote: this update allows us to use all methods");
+            // the point of these 3 lines is to meet project requirements of:
+            // "test all class methods"
+            theTriangle.setSide1(side1 * 2);
+            theTriangle.setSide2(side2 * 2);
+            theTriangle.setSide3(side3 * 2);
+            System.out.println(theTriangle.toString());
+
+            // User input Object - not default constructor - END
+
+            // section of code which will be optionally run multiple times - END
+
+            // sentinel checking
+            scan.nextLine();// clear the thing
+            System.out.print("Would you like to run program again (y/n)? ");
+            sentinelResponse = scan.nextLine().toUpperCase().trim();
+
+        }
+        // END Sentinel Loop
 
         // cleanup
         scan.close();
