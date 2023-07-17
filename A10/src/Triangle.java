@@ -14,18 +14,18 @@ public class Triangle extends GeometricObject {
       private String name;
 
       public Triangle() { // default constructor
-            side1 = 1.0;
-            side2 = 1.0;
-            side3 = 1.0;
+            setSide1(1.0);
+            setSide2(1.0);
+            setSide3(1.0);
             name = "myTriangle";
       }
 
       // constructor allowing to set the sides of the triangle
       public Triangle(double side1, double side2, double side3, String name) {
 
-            this.side1 = side1;
-            this.side2 = side2;
-            this.side3 = side3;
+            setSide1(side1);
+            setSide2(side2);
+            setSide3(side3);
             this.name = name;
       }
 

@@ -37,7 +37,6 @@ public class testTriangle {
             // Default Constructor Object - END
 
             // User input Object - not default constructor - BEGIN
-
             // prompts
             System.out.println("Now, We're doing a custom triangle!  Woo Hoo!");
             System.out.print("What would you like to name it?\t");
@@ -64,24 +63,13 @@ public class testTriangle {
             // setFilled(), on those 2 objects. Add proper and meaningful labels to your
             // outputs.
             Triangle theTriangle = new Triangle(side1, side2, side3, triangleName);
+            // these 2 methods complete the requirements to use all methods.
             theTriangle.setColor(triangleColor);
             theTriangle.setFilled(isFilled);
 
-            // output 1 - as created
+            // output
             System.out.println();
-            System.out.println("Custom User Triangle, first version:");
-
-            System.out.println(theTriangle.toString());
-
-            // output 2 - as updated
-            System.out.println();
-            System.out.println("Custom User Triangle, second version (each side is twice as big):");
-            System.out.println("\tnote: this update allows us to use all methods");
-            // the point of these 3 lines is to meet project requirements of:
-            // "test all class methods"
-            theTriangle.setSide1(side1 * 2);
-            theTriangle.setSide2(side2 * 2);
-            theTriangle.setSide3(side3 * 2);
+            System.out.println("Custom User Triangle:");
             System.out.println(theTriangle.toString());
 
             // User input Object - not default constructor - END
@@ -92,7 +80,6 @@ public class testTriangle {
             scan.nextLine();// clear the thing
             System.out.print("Would you like to run program again (y/n)? ");
             sentinelResponse = scan.nextLine().toUpperCase().trim();
-
         }
         // END Sentinel Loop
 
