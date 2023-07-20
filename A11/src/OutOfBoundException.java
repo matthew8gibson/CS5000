@@ -8,8 +8,6 @@
 import java.util.Scanner;
 import java.util.InputMismatchException;
 
-@SuppressWarnings("unused")
-
 public class OutOfBoundException {
     public static void main(String[] args) {
 
@@ -47,8 +45,9 @@ public class OutOfBoundException {
                 // one of the 2 problems got caught here
                 scan.nextLine(); // clear buffer
                 System.out.print("Index out of bound, re-enter a valid index: ");
-
             }
+            scan.nextLine(); // clear buffer (this is not needed in this location, but seems like a good idea
+                             // to do it incase more prompts are added later)
         }
 
         System.out.printf("The element at index %d is %d\n", input, value);
