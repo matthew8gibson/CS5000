@@ -6,25 +6,53 @@
 // IDE Name: VS Code
 
 import java.util.Scanner;
+import java.util.InputMismatchException;
+//import java.util.IllegalArgumentException;
 
-@SuppressWarnings("unused")
+//@SuppressWarnings("unused")
 
 public class countAverageGrades {
     public static void main(String[] args) {
         // setup
         Scanner scan = new Scanner(System.in);
+        int classSize = 10000;
 
-        System.out.print("Enter the number of students in class:\t");
-        int classSize = scan.nextInt();
-        int[] grades = new int[classSize];
-        scan.nextLine(); // clear buffer
-        // System.out.println("Debug Class Size: " + classSize);
-
-        System.out.print("Enter the grades:\t");
-        for (int i = 0; i < grades.length; i++) {
-            grades[i] = scan.nextInt();
-            // System.out.println(grades[i]);
+        // collecting input
+        // getting class size
+        try {
+            System.out.print("Enter the number of students in class (25 max):\t");
+            classSize = scan.nextInt();
+            if ((classSize < 0) || (classSize > 25)) {
+                throw new IllegalArgumentException("Class Size must be between 1 and 25.");
+            }
+        } catch (InputMismatchException ime) {
+            System.out.println("Invalid Input. Enter an integer.");
+        } catch (IllegalArgumentException iae) {
+            System.out.println(iae.getMessage());
+        } finally {
+            scan.nextLine(); // clear buffer
+            // System.out.println("Debug Class Size: " + classSize);
         }
+
+        // getting grades
+        int[] grades = new int[classSize];
+        try {
+            System.out.print("Enter the grades (1 to 100):\t");
+            for (int i = 0; i < grades.length; i++) {
+                grades[i] = scan.nextInt();
+                if (grades[i] < 0 || grades[i] > 100) {
+                    throw new IllegalArgumentException("Grade must be between 1 and 100.");
+                }
+                // System.out.println("Debug grade: " + grades[i]);
+            }
+        } catch (InputMismatchException ime) {
+            System.out.println("Invalid Input. Enter an integer.");
+        } catch (IllegalArgumentException iae) {
+            System.out.println(iae.getMessage());
+        } finally {
+            scan.nextLine(); // clear buffer
+        }
+        // end collecting input
 
         // calculations
         // sending the array of grades
@@ -40,20 +68,20 @@ public class countAverageGrades {
         }
         System.out.print("\n");
         System.out.printf("Class average:\t%.2f\n", average);
+        // end output
 
         // cleanup
         scan.close();
-
     }
 
-    private static double findAverage(int[] arr, int index, int sum) {
+    private static double findAverage(int[] workingArray, int index, int sum) {
         // the last time through
         if (index < 0) {
-            return (double) sum / arr.length;
+            return (double) sum / workingArray.length;
         }
 
         // start the adding of values to get the sum
-        sum += arr[index];
-        return findAverage(arr, index - 1, sum);
+        sum += workingArray[index];
+        return findAverage(workingArray, index - 1, sum);
     }
 }
