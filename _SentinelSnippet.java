@@ -12,6 +12,7 @@ public class _SentinelSnippet {
         String sentinelValue = "Y";
         String sentinelResponse = "Y";
 
+
         while (sentinelResponse.equals(sentinelValue)) {
 
             // section of code which will be optionally run multiple times - BEGIN
@@ -28,3 +29,18 @@ public class _SentinelSnippet {
         scan.close();
     }
 }
+
+// Check if there is something in the buffer
+if(scan.hasNext()){
+// Clear the buffer by reading and ignoring the input
+scan.next();System.out.println("Buffer cleared successfully.2");}else{System.out.println("Buffer is already empty.2");}
+
+// Check if there is something in the buffer
+if(scan.hasNext()){
+// Clear the buffer by reading and ignoring the input
+scan.next();System.out.println("Buffer cleared successfully.1");}else{System.out.println("Buffer is already empty.1");}
+
+// Check if there is something in the buffer
+if(scan.hasNext()){
+// Clear the buffer by reading and ignoring the input
+scan.next();System.out.println("Buffer cleared successfully.3");}else{System.out.println("Buffer is already empty.3");}
