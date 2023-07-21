@@ -7,8 +7,6 @@
 
 import java.util.Scanner;
 
-@SuppressWarnings("unused")
-
 public class Vowels {
     public static void main(String[] args) {
         // setup
