@@ -1,0 +1,19 @@
+A10View statistics for A10
+50 / 50
+3.75 / 3.75
+100 %
+Overall Feedback
+Programs Triangle and TestTriangle:
+
+Author headers in all three files (GeometricObject, Triangle, TestTriangle)? Yes
+Code in all three files is properly indented? Yes
+Code in all three files includes proper and sufficient inline comments? Yes
+Class Triangle implement all 8 requirements listed in the assignment sheet? Yes
+Method toString() prints outputs as shown in the assignment sheet? Yes
+Class TestTriangle rejects negative values for triangle sides? Yes
+Class Triangle methods work correctly (computations)? Yes
+Class TestTriangle allows user to create couple triangle objects (one default and one non-default)? Yes
+Class TestTriangle allows user to test all Triangle methods including inherited methods setColor() and setFilled()? Yes
+Other issues? No
+
+===============================

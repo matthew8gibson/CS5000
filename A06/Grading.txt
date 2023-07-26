@@ -1,0 +1,32 @@
+A6View statistics for A6
+50 / 50
+3.75 / 3.75
+100 %
+Overall Feedback
+Program CountOccurences:
+
+Is the author header complete? Yes
+Is the code properly indented and spaced? Yes
+Are there proper/sufficient inline comments? Yes
+Does the code reject invalid inputs? Yes
+Does the code allow the user to re-run the program (Sentinel Loop)? Yes
+Does the code compile without errors? Yes
+Does the code produce correct outputs as required? Yes
+Are outputs formatted as required? Yes
+Other issues? No
+
+===============================
+
+Program IndexOfLargest:
+
+Is the author header complete? Yes
+Is the code properly indented and spaced? Yes
+Are there proper/sufficient inline comments? Yes
+Does the code implement method findIndex in class IndexOfLargest (separate file)? Yes
+Does the code allow user to re-run the program (Sentinel Loop)? Yes
+Does the code compile without errors? Yes
+Does the code produce correct outputs as required? Yes
+Are outputs formatted as required? Yes
+Other issues? No
+===============================
+

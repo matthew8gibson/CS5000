@@ -1,0 +1,39 @@
+A4View statistics for A4
+50 / 50
+3.75 / 3.75
+100 %
+Overall Feedback
+Program InputSum:
+
+Author Header Complete? Yes
+Proper Code Indentation? Yes
+Proper/Sufficient Inline Comments? Yes
+Does code Use Sentinel Loop Correctly? Yes
+Does code Compile without Errors? Yes
+Does Code Produce Correct Outputs? Yes
+Are outputs Formatted as Required? Yes
+
+===============================
+
+Program PasswordTest:
+
+Author Header Complete? Yes
+Proper Code Indentation? Yes
+Proper/Sufficient Inline Comments? Yes
+Does code Use Sentinel Loop Correctly? Yes
+Does code Compile without Errors? Yes
+Does Code Produce Correct Outputs? Yes
+Are outputs Formatted as Required? Yes
+
+===============================
+
+Program Pattern:
+
+Author Header Complete? Yes
+Proper Code Indentation? Yes
+Proper/Sufficient Inline Comments? Yes
+Does code Compile without Errors? Yes
+Does Code Produce Correct Outputs? Yes
+Are outputs Formatted as Required? Yes
+
+===============================

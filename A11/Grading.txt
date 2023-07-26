@@ -1,0 +1,31 @@
+A11View statistics for A11
+50 / 50
+3.75 / 3.75
+100 %
+Overall Feedback
+Program MismatchException:
+
+Author header? Yes
+Code is properly indented? Yes
+Code includes proper and sufficient inline comments? Yes
+Code implements a try statement with a catch block (InputMismatchException)? Yes
+Code handles/rejects invalid grades? Yes
+Code computes grades average correctly? Yes
+Code allows the user to continue entering new sets of grades (sentinel loop)? Yes
+Code output is formatted as required? Yes
+Other issues? No
+
+===============================
+
+Program OutOfBoundException:
+
+Author header? Yes
+Code is properly indented? Yes
+Code includes proper and sufficient inline comments? Yes
+Code implements a try statement with catch blocks (InputMismatchException and  IndexOutOfBoundsException)? Yes
+Code handles/rejects invalid index input? Yes
+Code allows the user to continue entering new index value (sentinel loop)? Yes
+Code output is formatted as required? Yes
+Other issues? No
+
+===============================

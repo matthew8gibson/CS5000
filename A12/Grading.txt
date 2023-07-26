@@ -1,0 +1,32 @@
+A12View statistics for A12
+47 / 50
+3.52 / 3.75
+94 %
+Overall Feedback
+Program Vowels:
+
+Author header? Yes
+Code is properly indented? Yes
+Code includes proper and sufficient inline comments? Yes
+Code implements method countVowel recursively? Yes
+Method countVowel takes a string parameter? Yes
+Program outputs the correct count of vowels? Yes
+Code allows the user to continue entering new strings (sentinel loop)? Yes
+Code output is formatted as required? Yes
+Other issues? No
+
+===============================
+
+Program CountAverageGrades:
+
+Author header? Yes
+Code is properly indented? Yes
+Code includes proper and sufficient inline comments? Yes
+Code implements method findAverage() recursively? Yes
+ Code uses exception handling to deal with invalid inputs (InputMismatchException)? Yes
+Code computes the class average correctly? Yes
+Code allows the user to continue entering new index value (sentinel loop)? Yes
+Code output is formatted as required? No, there are no spaces between output (-3)
+Other issues? No
+
+===============================

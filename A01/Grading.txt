@@ -1,0 +1,37 @@
+A1View statistics for A1
+50 / 50
+3.75 / 3.75
+100 %
+Overall Feedback
+Program HelloWorld:
+
+Author Header Complete? Yes
+Proper Code Indentation? Yes
+Proper/Sufficient Inline Comments? Yes
+Does code Compile without Errors? Yes
+Does Code Produce Correct Outputs? Yes
+Are outputs Formatted as Required? Yes
+
+===============================
+
+Program SumDigits:
+
+Author Header Complete? Yes
+Proper Code Indentation? Yes
+Proper/Sufficient Inline Comments? Yes
+Does code Compile without Errors? Yes
+Does Code Produce Correct Outputs? Yes
+Are outputs Formatted as Required? Yes
+
+===============================
+
+Program DrivingCost:
+
+Author Header Complete? Yes
+Proper Code Indentation? Yes
+Proper/Sufficient Inline Comments? Yes
+Does code Compile without Errors? Yes
+Does Code Produce Correct Outputs? Yes
+Are outputs Formatted as Required? Yes
+
+===============================

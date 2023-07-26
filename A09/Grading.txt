@@ -1,0 +1,17 @@
+A9View statistics for A9
+50 / 50
+3.75 / 3.75
+100 %
+Overall Feedback
+Program HotelRating:
+
+Author headers in files HotelRating and TestHotelRating? Yes
+Code in both files is properly indented? Yes
+Code in both files includes proper and sufficient inline comments? Yes
+Class HotelRating uses only 2D array of type int as required? Yes
+Class HotelRating implements all required 7 methods? Yes
+Class HotelRating constructor populates the array with random value between 1 and 5? Yes
+Class  TestHotelRating prints out correct outputs? Yes
+Class  TestHotelRating prints out formatted as required? Yes
+Other issues? No
+===============================

@@ -1,0 +1,34 @@
+A7View statistics for A7
+50 / 50
+3.75 / 3.75
+100 %
+Overall Feedback
+Program MatrixAddition:
+
+Author header is complete? Yes
+Code is properly indented and spaced? Yes
+Code includes proper and sufficient inline comments? Yes
+The array is populated with random numbers? Yes
+The program defines method AddHours()? Yes
+The program allows the user to re-run the program (Sentinel Loop)? Yes
+The program compiles without errors? Yes
+The main method displays array as required? Yes
+Method AddHours() produces correct outputs? Yes
+The outputs are formatted as required? Yes
+Other issues? No
+
+===============================
+
+Program WeeklyHours:
+
+Author header is complete? Yes
+Code is properly indented and spaced? Yes
+Code includes proper and sufficient inline comments? Yes
+The main method populates the arrays with integer4s from the user? Yes
+The program defines method Add()? Yes
+The program allows the user to re-run the program (Sentinel Loop)? Yes
+The program compiles without errors? Yes
+The code produces correct outputs as required? Yes
+The outputs are formatted as required? Yes
+Other issues? No
+===============================

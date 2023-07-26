@@ -1,0 +1,38 @@
+A8View statistics for A8
+47 / 50
+3.52 / 3.75
+94 %
+Overall Feedback
+Program Account:
+
+Author headers in files Account and TestAccount? Yes
+Code in both files is properly indented? Yes
+Code in both files includes proper and sufficient inline comments? Yes
+Class Account implements all required 12 items (attributes and methods)? Yes
+Class Account implements method toString()? Yes
+Class TestAccount implement object myObject? 
+Printing object myObject displays required outputs as shown in the assignment sheet? 
+Class TestAccount adds 2 more objects (myAccount and yourAccount))? Yes
+Class Account handles account overdraft issue with proper error message? Yes
+Class TestAccount allows the user to re-run the program (Sentinel Loop)? Yes
+Both files compile without errors? Yes
+Class TestAccount produces correct outputs, for all objects, as required? There are no output for yourAccount and myObject.
+Class TestAccount produces outputs, for all objects, formatted as required? There are no output for yourAccount and myObject.
+Other issues? No
+===============================
+
+Program Rectangle:
+
+Author headers in files Account and TestAccount? Yes
+Code in both files is properly indented? Yes
+Code in both files includes proper and sufficient inline comments? No comment for file rectangle.java (-3)
+Class Rectangle implements all required 8 items (attributes and methods)? Yes
+Class Rectangle implements method toString()? Yes
+Class TestRectangle creates three objects (myRectangle, hisRectangle, and herRectangle)? Yes
+Class TestRectangle Handle negative inputs with proper errors messages? Yes
+Class TestRectangle allows the user to re-run the program (Sentinel Loop)? Yes
+Both files compile without errors? Yes
+Class TestRectangle produces correct outputs as required? Yes
+Class TestRectangle produces outputs formatted as required? Yes
+Other issues? No
+===============================

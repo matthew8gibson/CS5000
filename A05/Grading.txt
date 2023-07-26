@@ -1,0 +1,31 @@
+A5View statistics for A5
+45 / 50
+3.38 / 3.75
+90 %
+Overall Feedback
+Program Password:
+
+Author Header Complete? Yes
+Proper Code Indentation? Yes
+Proper/Sufficient Inline Comments? Yes
+Does code implement method CheckPassword (string) correctly? No, there is no method (CheckPassword) (-3)
+Develop code implement 5 additional boolean methods, one for each stated rule? Yes
+Does code allow user to re-run the program (Sentinel Loop)? Yes
+Does code Compile without Errors? Yes
+Does Code Produce Correct Outputs? Yes
+Are outputs Formatted as Required? Yes
+Other Issues?  Yes, does let the user know on how to stop the program (-1)
+
+===============================
+
+Program KeyPad:
+
+Author Header Complete? Yes
+Proper Code Indentation? Yes
+Proper/Sufficient Inline Comments? Yes
+Does code implement method getNumber (string) correctly? Yes
+Does code Compile without Errors? Yes
+Does Code Produce Correct Outputs? Yes
+Does code allow user to re-run the program (Sentinel Loop)? Yes
+Are outputs Formatted as Required? Yes
+Other Issues?  Yes, does let the user know on how to stop the program (-1)
